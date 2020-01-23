@@ -5,7 +5,7 @@
 (defun cedille-mode-archive-read-file (filename)
   "Read one of the template files for the archiving (to html) feature"
   (with-temp-buffer
-    (insert-file-contents (concat cedille-path-el "cedille-mode/" filename))
+    (insert-file-contents (concat cedille-mode-path filename))
     (buffer-string)))
 
 (defconst cedille-mode-archive-html-template

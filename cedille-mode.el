@@ -49,6 +49,10 @@
     "/usr/share/emacs/site-lisp/cedille-mode"
     cedille-path)))
 
+(defvar cedille-mode-path
+  (file-name-as-directory
+    (concat cedille-path-el "cedille-mode")))
+
 (defvar cedille-mode-browsing-history '(nil nil)) ;stores history while jumping between files
 
 (make-variable-buffer-local
@@ -80,7 +84,7 @@
   (add-to-list 'load-path se-path)
   (add-to-list 'load-path (concat se-path "json.el")))
 
-(let ((cedille-mode-library-path (file-name-as-directory (concat cedille-path-el "cedille-mode"))))
+(let ((cedille-mode-library-path cedille-mode-path))
   (add-to-list 'load-path cedille-mode-library-path)
   (add-to-list 'load-path (concat cedille-mode-library-path "json.el")))
 
